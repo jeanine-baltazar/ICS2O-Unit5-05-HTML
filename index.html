@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html lang="en-ca">
+    <head>
+      <meta charset="utf-8">
+      <meta name="description"content="Virtual Calendar">
+      <meta name="keywords"content= "Age, day, work, school, weekday, weekend.">
+      <meta name="author"content= "Jeanine Baltazar">
+      <meta name="viewport"content="width=device-width, initial-scale=1.0">
+      <title>Virtual Calendar</title>
+      <link rel="stylesheet" href="mystyle.css">
+      <script>
+      let yourAge;
+      function submit() {
+        yourAge=document.day.yourage.value;
+        var daySunday=document.getElementById("sunday");
+        var dayMonday=document.getElementById("monday");
+        var dayTuesday=document.getElementById("tuesday");
+        var dayWednesday=document.getElementById("wednesday");
+        var dayThursday=document.getElementById("thursday");
+        var dayFriday=document.getElementById("friday");
+        var daySaturday=document.getElementById("saturday");
+        if (daySunday.checked || daySaturday.checked) {
+          alert ("Time to relax for the weekend!");
+        } else if ((yourAge>=18) && (dayMonday.checked || dayTuesday.checked || dayWednesday.checked || dayThursday.checked || dayFriday.checked)) {
+          alert("Time to go to work!");
+        } else if ((yourAge<18) && (dayMonday.checked || dayTuesday.checked || dayWednesday.checked || dayThursday.checked || dayFriday.checked)) {
+          alert ("Time for school!");
+        } else {
+          alert("Please type your age and select a day of the week!");
+        }
+      }
+      </script>
+    </head>
+    <body>
+      <div class="w3-container" id="calendar">
+        <h1>Virtual Calendar</h1>
+        <p id="information">
+          Hello, World! This is your virtual calendar. Select the day of the week and
+          type in your age in numbers. Then, click submit for the virtual calendar to
+          tell you what you should be doing for the day!
+        </p>
+        <br>
+        <h2>Your Age?:</h2>
+        <form name="day">
+          <input type="text" name="yourage" id="yourage">
+        </form>
+        <br>
+        <br>
+        <h2>Day of the Week?:</h2>
+        <form id="radio">
+          <input type="radio" name="day" id="sunday" class="input"> Sunday <br>
+          <input type="radio" name="day" id="monday" class="input"> Monday <br>
+          <input type="radio" name="day" id="tuesday" class="input"> Tuesday <br>
+          <input type="radio" name="day" id="wednesday" class="input"> Wednesday <br>
+          <input type="radio" name="day" id="thursday" class="input"> Thursday <br>
+          <input type="radio" name="day" id="friday" class="input"> Friday <br>
+          <input type="radio" name="day" id="saturday" class="input"> Saturday <br>
+        </form>
+        <br>
+        <br>
+        <br>
+        <button onclick="submit()">Submit</button>
+      </div>
+    </body>
+</html>
